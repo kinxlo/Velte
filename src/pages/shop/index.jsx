@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const Shop = () => {
     return (
         <DefaultLayout>
-            <Center flexDir={`column`} bgImage={heroImg} height={rem(316)}>
+            <Center flexDir={`column`} bgImage={heroImg} height={rem(316)} bgPos={`center`} bgRepeat={`no-repeat`} bgSize={`cover`}>
                 <Heading fontWeight={800} fontSize={rem(40)}>
                     Shop
                 </Heading>

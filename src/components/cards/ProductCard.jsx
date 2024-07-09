@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Box, Image, Text, Heading, Card, Flex, Center } from "@chakra-ui/react";
+import { Box, Image, Text, Heading, Card, Flex, Center, Stack } from "@chakra-ui/react";
 import { useState } from "react";
 import { rem } from "../../utils/fontUtils";
 import SharedButton from "../SharedButton";
@@ -20,9 +20,10 @@ const ProductCard = ({ product }) => {
             border={`none`}
             bgColor={`#ECF0F1`}
             boxShadow={` 0px 4px 4px 0px #00000040`}
+            justifyContent={`space-between`}
         >
             <Image objectFit={`cover`} h={rem(301)} src={product.imageUrl} alt={product.imageAlt} opacity={isHovered ? 0.2 : 1} transition='opacity 0.3s' />
-            {isHovered && (
+            {/* {isHovered && (
                 <Center
                     position='absolute'
                     top='0'
@@ -49,8 +50,8 @@ const ProductCard = ({ product }) => {
                         title={`Add to cart`}
                     />
                 </Center>
-            )}
-            <Flex flexDir={`column`} gap={2} p='6'>
+            )} */}
+            <Flex h={`40%`} flexDir={`column`} gap={2} p='6'>
                 {product?.new ? (
                     <Box pos={`absolute`} top={4} right={4} display='flex' alignItems='baseline'>
                         <Center w={rem(50)} p={5} h={rem(50)} color={`white`} borderRadius='full' bgColor={`secondary.500`}>
@@ -65,16 +66,34 @@ const ProductCard = ({ product }) => {
                     </Box>
                 )}
 
-                <Heading fontSize={{ base: 16, md: rem(24) }} as='h3'>
-                    {product.title}
-                </Heading>
-                <Text>{product.category}</Text>
-                <Flex gap={10}>
-                    <Heading fontSize={rem(20)} as='h4' textDecoration='line-through'>
-                        N{product.originalPrice}
+                <Stack h={`100%`} justifyContent={`space-between`}>
+                    <Heading fontSize={{ base: 16, md: rem(24) }} as='h3'>
+                        {product.title}
                     </Heading>
-                    <Text hidden={!product?.discountedPrice} color={`#B0B0B0`}>N{product.discountedPrice}</Text>
-                </Flex>
+                    <Text>{product.category}</Text>
+                    <Flex alignItems={`flex-end`} justifyContent={`space-between`}>
+                        <Stack>
+                            <Heading fontSize={rem(20)} as='h4' textDecoration='line-through'>
+                                N{product.originalPrice}
+                            </Heading>
+                            <Text hidden={!product?.discountedPrice} color={`#B0B0B0`}>
+                                N{product.discountedPrice}
+                            </Text>
+                        </Stack>
+                        <SharedButton
+                            size={`sm`}
+                            as={Link}
+                            to={`/cart/${product?.title}/checkout`}
+                            state={product}
+                            py={5}
+                            w={rem(121)}
+                            bgColor={`primary.500`}
+                            color={`white`}
+                            borderRadius={5}
+                            title={`Add to cart`}
+                        />
+                    </Flex>
+                </Stack>
             </Flex>
         </Card>
     );

@@ -39,7 +39,22 @@ const Navbar = () => {
                         {/* <Icon icon='mdi:account-alert-outline' />
                         <Icon icon='akar-icons:search' />
                         <Icon icon='akar-icons:heart' /> */}
-                        <Link to={`/cart/${89}/checkout`}>
+                        <Link
+                            to={`/cart/${89}/checkout`}
+                            state={{
+                                title: "Face Toner",
+                                category: "Face & Lip Care",
+                                originalPrice: 2300.0,
+                                discountedPrice: 1725.0,
+                                imageUrl: "https://res.cloudinary.com/kingsleysolomon/image/upload/v1720545798/HNG/o0q0etfythu7oaudyf5j.jpg",
+                                imageAlt: "Face Toner",
+                                new: false,
+                                description: "Balances skin's pH and tightens pores.",
+                                quantity: Math.floor(Math.random() * 51),
+                                discountPercentage: (((2300 - 1725) / 2300) * 100).toFixed(0),
+                                isInStock: Math.random() >= 0.5,
+                            }}
+                        >
                             <Icon icon='ant-design:shopping-cart-outlined' />
                         </Link>
                         {/* <IconButton size='lg' variant='ghost' aria-label='Search' icon={<Icon icon={searchIcon} />} />

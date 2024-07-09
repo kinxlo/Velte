@@ -9,7 +9,7 @@ const ReviewCard = ({ review }) => {
             <VStack spacing={4} align='flex-start'>
                 <Avatar
                     size='xl'
-                    src={review?.imageUrl || `https://res.cloudinary.com/kingsleysolomon/image/upload/v1720194103/portfolio/qi1qbonhxjwxa567llhd.jpg`}
+                    src={review?.imageUrl || `https://res.cloudinary.com/kingsleysolomon/image/upload/v1720194103/portfolio/ohibyxwfhootgzsmsl0k.jpg`}
                     name={review?.name}
                 />
                 <Text>

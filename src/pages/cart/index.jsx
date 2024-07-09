@@ -1,4 +1,4 @@
-import {  Breadcrumb, BreadcrumbItem, BreadcrumbLink, Center, Heading } from "@chakra-ui/react";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Center, Heading } from "@chakra-ui/react";
 import DefaultLayout from "../../layout/DefaultLayout";
 import heroImg from "../../assets/hero-img-shop.png";
 import { Link, Outlet } from "react-router-dom";
@@ -9,7 +9,7 @@ import BreadCrumbBanner from "../../components/BreadCrumbBanner";
 const Cart = () => {
     return (
         <DefaultLayout>
-            <Center flexDir={`column`} bgImage={heroImg} height={rem(316)}>
+            <Center flexDir={`column`} bgImage={heroImg} height={rem(316)} bgPos={`center`} bgRepeat={`no-repeat`} bgSize={`cover`} >
                 <Heading fontWeight={800} fontSize={rem(40)}>
                     Cart
                 </Heading>
