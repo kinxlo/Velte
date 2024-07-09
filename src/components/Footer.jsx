@@ -1,4 +1,4 @@
-import { Box, Container, Stack, Text, VStack, Divider, Grid, GridItem, Image, Flex } from "@chakra-ui/react";
+import { Box, Container, Stack, Text, Divider, Grid, GridItem, Image, Flex } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import logo from "../assets/Velte-logo.png";
 import { Icon } from "@iconify/react/dist/iconify.js";
