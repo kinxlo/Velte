@@ -1,4 +1,5 @@
-import { Box, Container, Stack, Text, Link, VStack, Divider, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Container, Stack, Text, VStack, Divider, Grid, GridItem } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -18,8 +19,8 @@ const Footer = () => {
                             <Text fontWeight='bold' fontSize='lg'>
                                 Links
                             </Text>
-                            <Link href='#'>Home</Link>
-                            <Link href='#'>Shop</Link>
+                            <Link to='/'>Home</Link>
+                            <Link to='/shop'>Shop</Link>
                             {/* <Link href='#'>About</Link>
                             <Link href='#'>Contact</Link> */}
                         </VStack>
@@ -29,9 +30,9 @@ const Footer = () => {
                             <Text fontWeight='bold' fontSize='lg'>
                                 Help
                             </Text>
-                            <Link href='#'>Payment Options</Link>
-                            <Link href='#'>Returns</Link>
-                            <Link href='#'>Privacy Policies</Link>
+                            <Link to='/payment-option'>Payment Options</Link>
+                            <Link to='/return'>Returns</Link>
+                            <Link to='/privacy-policies'>Privacy Policies</Link>
                         </VStack>
                     </GridItem>
                     <GridItem colSpan={{ base: 12, md: 4 }}>

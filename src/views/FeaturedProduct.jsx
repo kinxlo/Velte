@@ -1,6 +1,7 @@
-import { Box, Heading, Image, Text, VStack,  Card, Flex, Center } from "@chakra-ui/react";
+import { Box, Heading, Image, Text, VStack, Card, Flex, Center } from "@chakra-ui/react";
 import SharedButton from "../components/SharedButton";
 import { rem } from "../utils/fontUtils";
+import { Link } from "react-router-dom";
 
 const FeaturedProduct = () => {
     return (
@@ -14,7 +15,15 @@ const FeaturedProduct = () => {
                     <Text fontSize='lg' color='gray.600'>
                         Our top pick for you.
                     </Text>
-                    <SharedButton bgColor={`primary.500`} borderRadius={`none`} color={`white`} title={`Add To Cart`} w={rem(176)} />
+                    <SharedButton
+                        as={Link}
+                        to={`/cart/${89}/checkout`}
+                        bgColor={`primary.500`}
+                        borderRadius={`none`}
+                        color={`white`}
+                        title={`Add To Cart`}
+                        w={rem(176)}
+                    />
                 </VStack>
 
                 {/* Right Section */}

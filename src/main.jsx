@@ -6,6 +6,7 @@ import customTheme from "./style/customTheme";
 // import ColorModeSwitcher from "./components/ThemeSwitcher";
 import { BrowserRouter } from "react-router-dom";
 import { AppProvider } from "./context/AppContext";
+import ScrollToTop from "./components/ScrollToTop";
 
 const rootElement = document.getElementById("root");
 ReactDOM.createRoot(rootElement).render(
@@ -14,6 +15,7 @@ ReactDOM.createRoot(rootElement).render(
             <AppProvider>
                 <ChakraProvider theme={customTheme}>
                     <ColorModeScript initialColorMode={customTheme.config.initialColorMode} />
+                    <ScrollToTop />
                     <App />
                     {/* <ColorModeSwitcher /> */}
                 </ChakraProvider>

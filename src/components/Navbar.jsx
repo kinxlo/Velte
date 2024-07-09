@@ -1,10 +1,13 @@
-import { Box, Flex, HStack, useDisclosure, Stack, Center, Text, Container } from "@chakra-ui/react";
+import { Box, Flex, HStack, useDisclosure, Stack, Center, Text, Container, Image } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/Velte-logo.png";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const location = useLocation();
+
+    const isActive = (path) => location.pathname === path;
 
     return (
         <Box bg='blue.500'>
@@ -15,20 +18,24 @@ const Navbar = () => {
                     </Center>
 
                     <HStack spacing={8} alignItems='center'>
-                        <Flex alignItems={`center`}>
-                            <img src={logo} alt='Velte Beauty' height='40px' />
-                            <Text as={`h2`} lineHeight={`36.57px`} fontWeight={700} color={`white`} fontSize={{ base: `sm`, md: `2xl` }}>
+                        <Flex as={Link} to={`/`} alignItems={`center`} flexDir={{ base: `column-reverse`, md: `row` }}>
+                            <Image src={logo} alt='Velte Beauty' h={{ base: `40px`, md: `initial` }} />
+                            <Text as={`h2`} fontWeight={700} color={`white`} fontSize={{ base: `sm`, md: `2xl` }}>
                                 Velte Beauty
                             </Text>
                         </Flex>
                     </HStack>
                     <HStack gap={16} as='nav' spacing={4} display={{ base: "none", lg: "flex" }} color='white'>
-                        <Link to='/'>Home</Link>
-                        <Link to='/shop'>Shop</Link>
-                        {/* <Link to='/about'>About</Link>
-                        <Link to='/contact'>Contact</Link> */}
+                        <Link to='/' style={{ fontWeight: isActive("/") ? "bold" : "normal" }}>
+                            Home
+                        </Link>
+                        <Link to='/shop' style={{ fontWeight: isActive("/shop") ? "bold" : "normal" }}>
+                            Shop
+                        </Link>
+                        {/* <Link to='/about' style={{ fontWeight: isActive('/about') ? 'bold' : 'normal' }}>About</Link>
+                        <Link to='/contact' style={{ fontWeight: isActive('/contact') ? 'bold' : 'normal' }}>Contact</Link> */}
                     </HStack>
-                    <HStack display={{ base: `none`, md: `flex` }} gap={10} fontSize={`28px`} alignItems='center' color='white'>
+                    <HStack gap={10} fontSize={`28px`} alignItems='center' color='white'>
                         {/* <Icon icon='mdi:account-alert-outline' />
                         <Icon icon='akar-icons:search' />
                         <Icon icon='akar-icons:heart' /> */}
@@ -36,8 +43,8 @@ const Navbar = () => {
                             <Icon icon='ant-design:shopping-cart-outlined' />
                         </Link>
                         {/* <IconButton size='lg' variant='ghost' aria-label='Search' icon={<Icon icon={searchIcon} />} />
-                    <IconButton size='lg' variant='ghost' aria-label='Favorites' icon={<Icon icon={heartIcon} />} />
-                    <IconButton size='lg' variant='ghost' aria-label='Cart' icon={<Icon icon={shoppingBag} />} /> */}
+                        <IconButton size='lg' variant='ghost' aria-label='Favorites' icon={<Icon icon={heartIcon} />} />
+                        <IconButton size='lg' variant='ghost' aria-label='Cart' icon={<Icon icon={shoppingBag} />} /> */}
                     </HStack>
                 </Flex>
             </Container>
@@ -45,10 +52,14 @@ const Navbar = () => {
             {isOpen ? (
                 <Container pb={4} display={{ lg: "none" }}>
                     <Stack as='nav' spacing={4} color='white'>
-                        <Link href='/'>Home</Link>
-                        <Link href='/shop'>Shop</Link>
-                        <Link href='/about'>About</Link>
-                        <Link href='/contact'>Contact</Link>
+                        <Link to='/' style={{ fontWeight: isActive("/") ? "bold" : "normal" }}>
+                            Home
+                        </Link>
+                        <Link to='/shop' style={{ fontWeight: isActive("/shop") ? "bold" : "normal" }}>
+                            Shop
+                        </Link>
+                        {/* <Link to='/about' style={{ fontWeight: isActive('/about') ? 'bold' : 'normal' }}>About</Link>
+                        <Link to='/contact' style={{ fontWeight: isActive('/contact') ? 'bold' : 'normal' }}>Contact</Link> */}
                     </Stack>
                 </Container>
             ) : null}

@@ -7,6 +7,7 @@ import CollectionCard from "../../components/cards/CollectionCard";
 import ProductCard from "../../components/cards/ProductCard";
 import FeaturedProduct from "../../views/FeaturedProduct";
 import ReviewCard from "../../components/cards/ReviewCard";
+import { Link } from "react-router-dom";
 
 const productList = [
     {
@@ -104,6 +105,8 @@ const Home = () => {
                             Luxury Skincare Inspired by Nature, Perfected by Science
                         </Heading>
                         <SharedButton
+                            as={Link}
+                            to={`/shop`}
                             title={`Buy Now`}
                             w={rem(180)}
                             h={rem(59)}
@@ -155,7 +158,7 @@ const Home = () => {
                         <Heading as={`h1`}>What Our Customers Say</Heading>
                         <Text>Real reviews from our satisfied customers</Text>
                     </Box>
-                    <SimpleGrid columns={{ base: 1, md: 2, lg: 3}} spacing={10}>
+                    <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
                         <ReviewCard review={{}} />
                         <ReviewCard review={{}} />
                         <ReviewCard review={{}} />
