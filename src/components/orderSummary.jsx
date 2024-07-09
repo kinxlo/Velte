@@ -2,6 +2,7 @@ import { Box, Button, Divider, Flex, Image, Stack, Text } from "@chakra-ui/react
 import visa from "../assets/visa-logo.png";
 import mastercard from "../assets/Mastercard.png";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { Link } from "react-router-dom";
 
 const OrderSummary = () => {
     return (
@@ -37,7 +38,7 @@ const OrderSummary = () => {
                         <Text>Total</Text>
                         <Text>₦11,100.00</Text>
                     </Flex>
-                    <Button bgColor={`primary.500`} color={`white`} mt='4' w='full'>
+                    <Button as={Link} to={`/cart/${89}/payment`} bgColor={`primary.500`} color={`white`} mt='4' w='full'>
                         Proceed To Checkout
                     </Button>
                 </Stack>
@@ -65,7 +66,9 @@ const OrderSummary = () => {
                         Buyer Protection
                     </Text>
                 </Flex>
-                <Text fontSize={`sm`} mt={4}>Get full refund if the item is not as described or if it is not delivered.</Text>
+                <Text fontSize={`sm`} mt={4}>
+                    Get full refund if the item is not as described or if it is not delivered.
+                </Text>
             </Box>
         </Box>
     );

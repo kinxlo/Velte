@@ -81,12 +81,14 @@ const CartLayoutInfo = () => {
 
                     <Flex justifyContent='space-between' alignItems={`center`} mt={5} flexDir={{ base: `column-reverse`, lg: `row` }} gap={5}>
                         <Link to={`/cart/${89}/checkout`}>
-                            <Button variant='link' colorScheme='blue'>
+                            <Button variant='link' color={`primary.500`}>
                                 <Icon icon='material-symbols:chevron-left' /> Back To Cart
                             </Button>
                         </Link>
                         <Link to={`/cart/${89}/payment`}>
-                            <Button colorScheme='blue'>Continue to shipping</Button>
+                            <Button bgColor={`primary.500`} color={`white`}>
+                                Continue to shipping
+                            </Button>
                         </Link>
                     </Flex>
                 </Stack>
