@@ -13,7 +13,7 @@ const productList = [
         title: "Face Foam Wash",
         category: "Face & Lip Care",
         originalPrice: "3,500.00",
-        discountedPrice: "2,450.00",
+        discountedPrice: null,
         imageUrl: "https://res.cloudinary.com/kingsleysolomon/image/upload/v1720360327/HNG/y7iri9ujt00i1wjt1u6j.png",
         imageAlt: "Face Foam Wash",
     },
@@ -29,7 +29,7 @@ const productList = [
         title: "Face Foam Wash",
         category: "Face & Lip Care",
         originalPrice: "3,500.00",
-        discountedPrice: "2,450.00",
+        discountedPrice: null,
         imageUrl: "https://res.cloudinary.com/kingsleysolomon/image/upload/v1720360327/HNG/y7iri9ujt00i1wjt1u6j.png",
         imageAlt: "Face Foam Wash",
     },
@@ -119,7 +119,7 @@ const Home = () => {
                     <Heading as={`h1`}>Browse Our Collection</Heading>
                     <Text>Discover the perfect products for your beauty routine</Text>
                 </Box>
-                <SimpleGrid w={`100%`} columns={{ base: 1, md: 3 }} gap={10}>
+                <SimpleGrid w={`100%`} columns={{ base: 1, md: 2, lg: 3 }} gap={10}>
                     <CollectionCard
                         image={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1720360327/HNG/hrwzlua9ghnfcctpzmql.png`}
                         title={`Lip & Face Care`}
@@ -138,7 +138,7 @@ const Home = () => {
                 <Box mb={10}>
                     <Heading as={`h1`}>Our Products</Heading>
                 </Box>
-                <SimpleGrid w={`100%`} columns={{ base: 1, md: 4 }} spacing={10}>
+                <SimpleGrid w={`100%`} columns={{ base: 1, md: 2, lg: 3, xl: 4 }} spacing={10}>
                     {productList.map((product, index) => (
                         <ProductCard key={index} product={product} />
                     ))}
@@ -155,7 +155,7 @@ const Home = () => {
                         <Heading as={`h1`}>What Our Customers Say</Heading>
                         <Text>Real reviews from our satisfied customers</Text>
                     </Box>
-                    <SimpleGrid columns={{ md: 3 }} spacing={10}>
+                    <SimpleGrid columns={{ base: 1, md: 2, lg: 3}} spacing={10}>
                         <ReviewCard review={{}} />
                         <ReviewCard review={{}} />
                         <ReviewCard review={{}} />

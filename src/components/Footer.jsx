@@ -20,8 +20,8 @@ const Footer = () => {
                             </Text>
                             <Link href='#'>Home</Link>
                             <Link href='#'>Shop</Link>
-                            <Link href='#'>About</Link>
-                            <Link href='#'>Contact</Link>
+                            {/* <Link href='#'>About</Link>
+                            <Link href='#'>Contact</Link> */}
                         </VStack>
                     </GridItem>
                     <GridItem colSpan={{ base: 12, md: 2 }}>

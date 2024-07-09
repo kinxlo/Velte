@@ -3,7 +3,7 @@ import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import * as ReactDOM from "react-dom/client";
 import App from "./App";
 import customTheme from "./style/customTheme";
-import ColorModeSwitcher from "./components/ThemeSwitcher";
+// import ColorModeSwitcher from "./components/ThemeSwitcher";
 import { BrowserRouter } from "react-router-dom";
 import { AppProvider } from "./context/AppContext";
 
@@ -15,7 +15,7 @@ ReactDOM.createRoot(rootElement).render(
                 <ChakraProvider theme={customTheme}>
                     <ColorModeScript initialColorMode={customTheme.config.initialColorMode} />
                     <App />
-                    <ColorModeSwitcher />
+                    {/* <ColorModeSwitcher /> */}
                 </ChakraProvider>
             </AppProvider>
         </BrowserRouter>

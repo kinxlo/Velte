@@ -5,7 +5,7 @@ import { rem } from "../utils/fontUtils";
 const FeaturedProduct = () => {
     return (
         <Box>
-            <Flex flexDir={{ base: `column`, md: `row` }} gap={10} alignItems='center'>
+            <Flex flexDir={{ base: `column`, xl: `row` }} gap={10} alignItems='center'>
                 {/* Left Section */}
                 <VStack w={`100%`} spacing={5} align='flex-start'>
                     <Heading fontWeight={800} as='h1' fontSize={{ base: rem(20), md: rem(40) }}>

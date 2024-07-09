@@ -5,7 +5,7 @@ import { rem } from "../../utils/fontUtils";
 
 const ReviewCard = ({ review }) => {
     return (
-        <Box boxShadow={`0px 4px 4px 0px #00000040`} borderRadius={5} w={{ md: rem(372) }} overflow='hidden' p={5} bg='white'>
+        <Box boxShadow={`0px 4px 4px 0px #00000040`} borderRadius={5} w={{ xl: rem(372) }} overflow='hidden' p={5} bg='white'>
             <VStack spacing={4} align='flex-start'>
                 <Avatar
                     size='xl'
