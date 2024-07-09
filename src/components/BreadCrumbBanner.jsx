@@ -4,7 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 
 const BreadCrumbBanner = () => {
     const location = useLocation();
-
     const isActive = (path) => location.pathname.includes(path);
 
     return (
@@ -13,18 +12,18 @@ const BreadCrumbBanner = () => {
                 <Flex fontSize={{ base: `sm`, md: `initial` }}>
                     <Breadcrumb spacing='8px' separator={<Icon icon='material-symbols:chevron-right' />}>
                         <BreadcrumbItem>
-                            <BreadcrumbLink as={Link} to={`checkout`} color={isActive("checkout") ? "primary.500" : "initial"}>
+                            <BreadcrumbLink as={Link} to={`checkout`} state={location?.state} color={isActive("checkout") ? "primary.500" : "initial"}>
                                 Cart
                             </BreadcrumbLink>
                         </BreadcrumbItem>
 
                         <BreadcrumbItem>
-                            <BreadcrumbLink as={Link} to={`information`} color={isActive("information") ? "primary.500" : "initial"}>
+                            <BreadcrumbLink as={Link} to={`information`} state={location?.state} color={isActive("information") ? "primary.500" : "initial"}>
                                 Information
                             </BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbItem>
-                            <BreadcrumbLink as={Link} to={`payment`} color={isActive("payment") ? "primary.500" : "initial"}>
+                            <BreadcrumbLink as={Link} to={`payment`} state={location?.state} color={isActive("payment") ? "primary.500" : "initial"}>
                                 Payment and Shipping
                             </BreadcrumbLink>
                         </BreadcrumbItem>

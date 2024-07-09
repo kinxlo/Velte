@@ -18,6 +18,19 @@ const FeaturedProduct = () => {
                     <SharedButton
                         as={Link}
                         to={`/cart/${89}/checkout`}
+                        state={{
+                            title: "Face Toner",
+                            category: "Face & Lip Care",
+                            originalPrice: 2300.0,
+                            discountedPrice: 1725.0,
+                            imageUrl: "https://res.cloudinary.com/kingsleysolomon/image/upload/v1720545798/HNG/o0q0etfythu7oaudyf5j.jpg",
+                            imageAlt: "Face Toner",
+                            new: false,
+                            description: "Balances skin's pH and tightens pores.",
+                            quantity: Math.floor(Math.random() * 51),
+                            discountPercentage: (((2300 - 1725) / 2300) * 100).toFixed(0),
+                            isInStock: Math.random() >= 0.5,
+                        }}
                         bgColor={`primary.500`}
                         borderRadius={`none`}
                         color={`white`}
@@ -34,13 +47,15 @@ const FeaturedProduct = () => {
                                 <Text fontSize={{ md: `sm` }}>-50%</Text>
                             </Center>
                         </Box>
-                        <Image
-                            objectFit={`cover`}
-                            w={`100%`}
-                            h={`100%`}
-                            src='https://res.cloudinary.com/kingsleysolomon/image/upload/v1720360327/HNG/ukeqmlk40frjxhgopfje.png' // Replace with actual image URL
-                            alt='Velte Ayurvedic Hair Butter'
-                        />
+                        <Box h={rem(515)}>
+                            <Image
+                                objectFit={`cover`}
+                                w={`100%`}
+                                h={`100%`}
+                                src='https://res.cloudinary.com/kingsleysolomon/image/upload/v1720545800/HNG/gh6jcpbazowwek9tezff.jpg' // Replace with actual image URL
+                                alt='Velte Ayurvedic Hair Butter'
+                            />
+                        </Box>
                         <Flex
                             bgColor={`accentYellow.500`}
                             justifyContent={`space-around`}

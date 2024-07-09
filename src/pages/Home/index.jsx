@@ -8,73 +8,7 @@ import ProductCard from "../../components/cards/ProductCard";
 import FeaturedProduct from "../../views/FeaturedProduct";
 import ReviewCard from "../../components/cards/ReviewCard";
 import { Link } from "react-router-dom";
-
-const productList = [
-    {
-        title: "Face Foam Wash",
-        category: "Face & Lip Care",
-        originalPrice: "3,500.00",
-        discountedPrice: null,
-        imageUrl: "https://res.cloudinary.com/kingsleysolomon/image/upload/v1720360327/HNG/y7iri9ujt00i1wjt1u6j.png",
-        imageAlt: "Face Foam Wash",
-    },
-    {
-        title: "Face Moisturizer",
-        category: "Face & Lip Care",
-        originalPrice: "3,500.00",
-        discountedPrice: "2,450.00",
-        imageUrl: "https://res.cloudinary.com/kingsleysolomon/image/upload/v1720360327/HNG/y7iri9ujt00i1wjt1u6j.png",
-        imageAlt: "Face Moisturizer",
-    },
-    {
-        title: "Face Foam Wash",
-        category: "Face & Lip Care",
-        originalPrice: "3,500.00",
-        discountedPrice: null,
-        imageUrl: "https://res.cloudinary.com/kingsleysolomon/image/upload/v1720360327/HNG/y7iri9ujt00i1wjt1u6j.png",
-        imageAlt: "Face Foam Wash",
-    },
-    {
-        title: "Face Moisturizer",
-        category: "Face & Lip Care",
-        originalPrice: "3,500.00",
-        discountedPrice: "2,450.00",
-        imageUrl: "https://res.cloudinary.com/kingsleysolomon/image/upload/v1720360327/HNG/y7iri9ujt00i1wjt1u6j.png",
-        imageAlt: "Face Moisturizer",
-    },
-    {
-        title: "Face Foam Wash",
-        category: "Face & Lip Care",
-        originalPrice: "3,500.00",
-        discountedPrice: "2,450.00",
-        imageUrl: "https://res.cloudinary.com/kingsleysolomon/image/upload/v1720360327/HNG/y7iri9ujt00i1wjt1u6j.png",
-        imageAlt: "Face Foam Wash",
-    },
-    {
-        title: "Face Moisturizer",
-        category: "Face & Lip Care",
-        originalPrice: "3,500.00",
-        discountedPrice: "2,450.00",
-        imageUrl: "https://res.cloudinary.com/kingsleysolomon/image/upload/v1720360327/HNG/y7iri9ujt00i1wjt1u6j.png",
-        imageAlt: "Face Moisturizer",
-    },
-    {
-        title: "Face Foam Wash",
-        category: "Face & Lip Care",
-        originalPrice: "3,500.00",
-        discountedPrice: "2,450.00",
-        imageUrl: "https://res.cloudinary.com/kingsleysolomon/image/upload/v1720360327/HNG/y7iri9ujt00i1wjt1u6j.png",
-        imageAlt: "Face Foam Wash",
-    },
-    {
-        title: "Face Moisturizer",
-        category: "Face & Lip Care",
-        originalPrice: "3,500.00",
-        discountedPrice: "2,450.00",
-        imageUrl: "https://res.cloudinary.com/kingsleysolomon/image/upload/v1720360327/HNG/y7iri9ujt00i1wjt1u6j.png",
-        imageAlt: "Face Moisturizer",
-    },
-];
+import { productList } from "../../utils/products";
 
 const Home = () => {
     // const { state, dispatch } = useContext(AppContext);
@@ -142,7 +76,7 @@ const Home = () => {
                     <Heading as={`h1`}>Our Products</Heading>
                 </Box>
                 <SimpleGrid w={`100%`} columns={{ base: 1, md: 2, lg: 3, xl: 4 }} spacing={10}>
-                    {productList.map((product, index) => (
+                    {productList?.slice(0, 8).map((product, index) => (
                         <ProductCard key={index} product={product} />
                     ))}
                 </SimpleGrid>

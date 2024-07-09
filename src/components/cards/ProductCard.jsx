@@ -39,27 +39,32 @@ const ProductCard = ({ product }) => {
                     <SharedButton isDisabled={true} py={6} w={`70%`} bgColor={`primary.500`} color={`white`} borderRadius={0} title={`View Product`} />
                     <SharedButton
                         as={Link}
-                        to={`/cart/${98}/checkout`}
+                        to={`/cart/${product?.title}/checkout`}
+                        state={product}
                         py={6}
                         w={`70%`}
                         color={`primary.500`}
-                        bgColr={`white`}
+                        bgColor={`white`}
                         borderRadius={0}
                         title={`Add to cart`}
                     />
                 </Center>
             )}
             <Flex flexDir={`column`} gap={2} p='6'>
-                <Box pos={`absolute`} top={4} right={4} display='flex' alignItems='baseline'>
-                    <Center w={rem(50)} p={5} h={rem(50)} color={`white`} borderRadius='full' bgColor={`accent.500`}>
-                        <Text fontSize={{ md: `sm` }}>-30%</Text>
-                    </Center>
-                </Box>
-                {/* <Box pos={`absolute`} top={4} right={4} display='flex' alignItems='baseline'>
-                    <Center w={rem(50)} p={5} h={rem(50)} color={`white`} borderRadius='full' bgColor={`secondary.500`}>
-                        <Text fontSize={{ md: `sm` }}>New</Text>
-                    </Center>
-                </Box> */}
+                {product?.new ? (
+                    <Box pos={`absolute`} top={4} right={4} display='flex' alignItems='baseline'>
+                        <Center w={rem(50)} p={5} h={rem(50)} color={`white`} borderRadius='full' bgColor={`secondary.500`}>
+                            <Text fontSize={{ md: `sm` }}>New</Text>
+                        </Center>
+                    </Box>
+                ) : (
+                    <Box pos={`absolute`} top={4} right={4} display='flex' alignItems='baseline'>
+                        <Center w={rem(50)} p={5} h={rem(50)} color={`white`} borderRadius='full' bgColor={`accent.500`}>
+                            <Text fontSize={{ md: `sm` }}>-{product?.discountPercentage}%</Text>
+                        </Center>
+                    </Box>
+                )}
+
                 <Heading fontSize={{ base: 16, md: rem(24) }} as='h3'>
                     {product.title}
                 </Heading>
@@ -68,7 +73,7 @@ const ProductCard = ({ product }) => {
                     <Heading fontSize={rem(20)} as='h4' textDecoration='line-through'>
                         N{product.originalPrice}
                     </Heading>
-                    <Text color={`#B0B0B0`}>N{product.discountedPrice}</Text>
+                    <Text hidden={!product?.discountedPrice} color={`#B0B0B0`}>N{product.discountedPrice}</Text>
                 </Flex>
             </Flex>
         </Card>
