@@ -73,7 +73,7 @@ const ProductCard = ({ product }) => {
                     <Text>{product.category}</Text>
                     <Flex alignItems={`flex-end`} justifyContent={`space-between`}>
                         <Stack>
-                            <Heading fontSize={rem(20)} as='h4' textDecoration='line-through'>
+                            <Heading fontSize={rem(20)} as='h4' textDecoration={product?.discountedPrice ? `line-through` : null}>
                                 N{product.originalPrice}
                             </Heading>
                             <Text hidden={!product?.discountedPrice} color={`#B0B0B0`}>
