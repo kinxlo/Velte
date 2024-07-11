@@ -14,8 +14,6 @@ const ProductCard = ({ product }) => {
             borderWidth='1px'
             borderRadius='lg'
             overflow='hidden'
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
             position='relative'
             border={`none`}
             bgColor={`#ECF0F1`}
